@@ -11,7 +11,7 @@ permalink: /posts/learning-guide/
 
 ## Overview
 
-Welcome to the "Jasmine Learns Mandarin" guide! This 30-day guide is designed to help you learn Mandarin Chinese using Duolingo and a Rosetta Stone picture dictionary. Follow the daily lessons and log your progress to track your language learning journey.
+Welcome to the "Jazz Learns Mandarin" guide! This 30-day guide is designed to help you learn Mandarin Chinese using Duolingo and a Rosetta Stone picture dictionary. Follow the daily lessons and log your progress to track your language learning journey.
 
 ## Day 1-5: Getting Started
 
