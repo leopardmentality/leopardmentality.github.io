@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: page
 title: Learning Log
-date: 2023-12-17 8:00 -0600
+date: 2023-12-17 9:00 -0600
 categories: [Language Learning, Mandarin, Duolingo, Rosetta Stone]
 tags: [Learning tools, Mandarin]
 permalink: /posts/learning-log/
