@@ -184,7 +184,8 @@ exclude:
   - LICENSE
   - rollup.config.js
   - package*.json
-
+plugins:
+  - github-pages
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
