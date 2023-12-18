@@ -127,37 +127,23 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# collections:
-#   tabs:
-#     output: true
-#     sort_by: order
-
 collections:
   tabs:
     output: true
     sort_by: order
-
-tabs:
-  - about
-  - categories
-  - tags
-  - posts:
-      output: true
-      permalink: /posts/
-      title: Posts
 
 defaults:
   - scope:
       path: "" # An empty string here means all files in the project
       type: posts
     values:
-      layout: posts
+      layout: single
       author_profile: true
       read_time: true
       comments: true
       share: true
       related: true
-      permalink: /posts/:title/
+      permalink: /:categories/:title/
   - scope:
       path: _drafts
     values:
