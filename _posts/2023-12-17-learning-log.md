@@ -1,8 +1,13 @@
 ---
 layout: post
-title: "Mandarin Learning Log"
+title: Mandarin Learning Log
+date: 2023-12-17 8:00 -0600
 categories: [Language Learning, Mandarin, Duolingo, Rosetta Stone]
+tags: [Learning tools, Mandarin]
+permalink: /posts/learning-log/
 ---
+
+
 
 # Mandarin Learning Log
 
