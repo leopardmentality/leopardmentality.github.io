@@ -1,51 +1,59 @@
 ---
 layout: post
-title: Mandarin Learning Log
+title: Learning Log
 date: 2023-12-17 8:00 -0600
 categories: [Language Learning, Mandarin, Duolingo, Rosetta Stone]
 tags: [Learning tools, Mandarin]
 permalink: /posts/learning-log/
 ---
-
-
-
 # Mandarin Learning Log
 
-<div id="learning-log-container" style="text-align: center;"></div>
+<div id="learning-log-container" style="text-align: center;">
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Words Learned</th>
+        <th>Word Meanings</th>
+        <th>Notes</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="learning-log-table-body">
+      <!-- Previous entries will be dynamically loaded here using JavaScript -->
+    </tbody>
+  </table>
 
-<form id="learning-log-form">
-  <label for="day">Day:</label>
-  <input type="number" id="day" required>
+  <form id="learning-log-form">
+    <label for="day">Day:</label>
+    <input type="number" id="day" required>
 
-  <label for="words-learned">Words Learned:</label>
-  <input type="text" id="words-learned" required>
+    <label for="words-learned">Words Learned:</label>
+    <input type="text" id="words-learned" required>
 
-  <label for="word-meanings">Word Meanings:</label>
-  <input type="text" id="word-meanings" required>
+    <label for="word-meanings">Word Meanings:</label>
+    <input type="text" id="word-meanings" required>
 
-  <label for="notes">Notes:</label>
-  <textarea id="notes" required></textarea>
+    <label for="notes">Notes:</label>
+    <textarea id="notes" required></textarea>
 
-  <button type="button" onclick="addEntry()">Add Entry</button>
-</form>
+    <button type="button" onclick="addEntry()">Add Entry</button>
+  </form>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     let learningLogData = [];
 
     function generateTable(data) {
-      const tableContainer = document.getElementById('learning-log-container');
-      const table = document.createElement('table');
-      const headerRow = table.insertRow(0);
+      const tableBody = document.getElementById('learning-log-table-body');
 
-      for (const key in data[0]) {
-        const header = document.createElement('th');
-        header.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-        headerRow.appendChild(header);
-      }
+      // Clear existing rows
+      tableBody.innerHTML = '';
 
       for (let i = 0; i < data.length; i++) {
-        const row = table.insertRow();
+        const row = tableBody.insertRow();
         for (const key in data[i]) {
           const cell = row.insertCell();
           cell.textContent = data[i][key];
@@ -63,9 +71,6 @@ permalink: /posts/learning-log/
         deleteButton.onclick = function () { deleteEntry(i); };
         deleteCell.appendChild(deleteButton);
       }
-
-      tableContainer.innerHTML = '';
-      tableContainer.appendChild(table);
     }
 
     function addEntry() {
@@ -75,7 +80,7 @@ permalink: /posts/learning-log/
       const notes = document.getElementById('notes').value;
 
       if (day && wordsLearned && wordMeanings && notes) {
-        const newEntry = { day: day, 'words learned': wordsLearned, 'word meanings': wordMeanings, notes: notes };
+        const newEntry = { Day: day, 'Words Learned': wordsLearned, 'Word Meanings': wordMeanings, Notes: notes };
         learningLogData.push(newEntry);
         generateTable(learningLogData);
       } else {
@@ -85,10 +90,10 @@ permalink: /posts/learning-log/
 
     function editEntry(index) {
       const entry = learningLogData[index];
-      document.getElementById('day').value = entry.day;
-      document.getElementById('words-learned').value = entry['words learned'];
-      document.getElementById('word-meanings').value = entry['word meanings'];
-      document.getElementById('notes').value = entry.notes;
+      document.getElementById('day').value = entry.Day;
+      document.getElementById('words-learned').value = entry['Words Learned'];
+      document.getElementById('word-meanings').value = entry['Word Meanings'];
+      document.getElementById('notes').value = entry.Notes;
 
       learningLogData.splice(index, 1);
       generateTable(learningLogData);
